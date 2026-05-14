@@ -1,0 +1,524 @@
+/* ====================== NAVBAR ====================== */
+
+.navbar {
+  width: 100%;
+  background: #F5F1EA;
+  
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  font-family: 'Inter', system-ui, sans-serif;
+
+  border-bottom: 1px solid #E5E7EB;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* ====================== TOP BAR ====================== */
+
+.top-bar {
+  background: #d9c5a2;
+  color: #fff;
+  
+
+  font-size: 0.875rem;
+
+  padding: 12px 0;
+}
+
+.top-bar-container {
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+.top-links {
+  display: none;
+  align-items: center;
+  gap: 24px;
+
+  font-size: 0.8rem;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.top-links a {
+  color: #3E2723;
+  font-size: 0.85rem;
+  font-weight: 550;
+  text-decoration: none;
+
+  opacity: 0.9;
+
+  transition: 0.3s ease;
+}
+
+.top-links a:hover {
+  opacity: 1;
+}
+
+.sign-in-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #3E2723;
+  text-decoration: none;
+
+  font-size: 0.85rem;
+
+  transition: opacity 0.3s;
+}
+
+.sign-in-link:hover {
+  opacity: 0.8;
+}
+
+/* ====================== MAIN NAV ====================== */
+
+.main-nav {
+  padding: 24px 0;
+}
+
+.nav-container {
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 0 32px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ====================== LEFT ====================== */
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-btn {
+  font-size: 1.8rem;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  padding: 4px;
+
+  display: block;
+
+  color: #111827;
+
+  transition: 0.3s ease;
+}
+
+.menu-btn:hover {
+  color: #3E2723;
+}
+
+/* ====================== SEARCH ====================== */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #F3F4F6;
+
+  padding: 12px 18px;
+
+  border-radius: 50px;
+
+  transition: 0.3s ease;
+
+  border: none;
+}
+
+.search-box:hover {
+  background: #EDEDED;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 0.95rem;
+
+  color: #111827;
+}
+
+.search-box input::placeholder {
+  color: #9CA3AF;
+}
+
+/* ====================== LOGO ====================== */
+
+.logo {
+  position: relative;
+
+  font-size: 2.3rem;
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  color: #3E2723;
+
+  text-decoration: none;
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+/* GRADIENT SHINE EFFECT */
+
+.logo::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: shine 4s linear infinite;
+}
+
+/* GLOW EFFECT */
+
+.logo::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  transform: translateX(-50%);
+
+  width: 0%;
+  height: 3px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    #3E2723,
+    #C08B5C,
+    #8D8D8D
+  );
+
+  transition: width 0.4s ease;
+}
+
+/* HOVER */
+
+.logo:hover {
+  color: #3E2723;
+
+  transform: scale(1.06) translateY(-2px);
+
+  text-shadow:
+    0 0 10px rgba(92, 109, 103, 0.35),
+    0 0 25px rgba(16, 185, 129, 0.15);
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+/* FLOATING ANIMATION */
+
+@keyframes logoFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* SHINE SWEEP */
+
+@keyframes shine {
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+
+/* ====================== CENTER NAV ====================== */
+
+.nav-menu {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: none;
+  align-items: center;
+
+  gap: 42px;
+}
+
+.nav-menu a {
+  position: relative;
+
+  color: #C08B5C;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  padding-bottom: 6px;
+
+  transition: 0.3s ease;
+}
+
+/* UNDERLINE ANIMATION */
+
+.nav-menu a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0%;
+  height: 2px;
+
+  background: #C08B5C;
+
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #3E2723;
+}
+
+/* ====================== RIGHT ====================== */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+/* ====================== ICONS ====================== */
+
+.nav-icon {
+  font-size: 1.45rem;
+
+  cursor: pointer;
+
+  color: #C08B5C;
+
+  transition: 0.3s ease;
+}
+
+.nav-icon:hover {
+  color: #3E2723;
+  transform: translateY(-2px);
+}
+
+/* ====================== CART ====================== */
+
+.cart-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.cart-count {
+  position: absolute;
+
+  top: -6px;
+  right: -8px;
+
+  background: #3E2723;
+  color: #fff;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ====================== MOBILE MENU ====================== */
+
+.mobile-menu {
+  background: #fff;
+
+  border-top: 1px solid #eee;
+
+  padding: 24px 0;
+
+  animation: slideDown 0.3s ease;
+}
+
+.mobile-menu-content {
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  font-size: 1.2rem;
+}
+
+.mobile-menu-content a {
+  position: relative;
+
+  width: fit-content;
+
+  color: #111827;
+
+  text-decoration: none;
+
+  padding-bottom: 5px;
+}
+
+.mobile-menu-content a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0%;
+  height: 2px;
+
+  background: #3E2723;
+
+  transition: width 0.3s ease;
+}
+
+.mobile-menu-content a:hover::after {
+  width: 100%;
+}
+
+/* ====================== ANIMATION ====================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====================== RESPONSIVE ====================== */
+
+@media (min-width: 1024px) {
+
+  .menu-btn {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .top-links {
+    display: flex;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .search-box {
+    display: none;
+  }
+
+  .nav-right {
+    gap: 18px;
+  }
+
+}
+
+/* ====================== GLOBAL HOVERS ====================== */
+
+.nav-icon,
+.logo,
+.nav-menu a {
+  transition: all 0.3s ease;
+}
